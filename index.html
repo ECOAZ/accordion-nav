@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accordion Navigation</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    nav {
+      background: #333;
+      color: #fff;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin: 5px 0;
+    }
+
+    nav ul li a, summary {
+      display: block;
+      padding: 10px 15px;
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    nav ul li a:hover, summary:hover {
+      background: #444;
+    }
+
+    /* Submenu */
+    details ul {
+      background: #555;
+      margin: 0;
+      padding: 0;
+    }
+
+    details ul li a {
+      padding-left: 30px;
+    }
+
+    /* Desktop: horizontal */
+    @media (min-width: 769px) {
+      nav ul {
+        display: flex;
+      }
+      nav ul li {
+        margin-right: 20px;
+      }
+      details {
+        position: relative;
+      }
+      details ul {
+        position: absolute;
+        display: none;
+      }
+      details[open] ul {
+        display: block;
+      }
+    }
+
+    /* Mobile: vertical + full screen */
+    @media (max-width: 768px) {
+      nav {
+        height: 100vh;       /* full screen */
+        overflow-y: auto;    /* scrollable */
+      }
+      nav ul {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="https://www.k-suwa.jp/">Home</a></li>
+      <li><a href="https://www.k-suwa.jp/about">About</a></li>
+      <li><a href="https://www.k-suwa.jp/mission">Mission</a></li>
+      <li>
+        <details>
+          <summary>Facilities</summary>
+          <ul>
+            <li><a href="https://www.k-suwa.jp/machines">Main Equipment</a></li>
+            <li><a href="https://www.k-suwa.jp/inspection">Inspection Devices</a></li>
+          </ul>
+        </details>
+      </li>
+      <li><a href="https://www.k-suwa.jp/materials">Materials</a></li>
+      <li><a href="https://www.k-suwa.jp/access">Access</a></li>
+      <li><a href="https://www.k-suwa.jp/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">Contact</a></li>
+      <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSczv0DuqCrIEmBXPsBAR6jO1s4X_NdqVQYwCPBP-kGlv7ySpA/viewform?pli=1">Survey</a></li>
+    </ul>
+  </nav>
+</body>
+</html>
