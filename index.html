@@ -81,7 +81,12 @@
   </style>
 </head>
 <body>
-  <nav>
+  document.getElementById('link-serviceA').addEventListener('click', function(e) {
+  e.preventDefault(); // iframe内での遷移を止める
+  window.top.location.href = this.href; // 親ページでリンク先を開く
+});
+
+<nav>
     <ul>
       <li><a href="https://www.k-suwa.jp/" target="_parent">Home</a></li>
       <li><a href="https://www.k-suwa.jp/about" target="_parent">About</a></li>
@@ -104,4 +109,5 @@
 </body>
 
 </html>
+
 
